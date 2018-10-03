@@ -1,0 +1,155 @@
+:root{
+	--main-color: #333;
+
+	--text-size-base: 1em;
+	--font-family: "roboto", sans-serif;
+
+	--text-size-xxs: calc(0.25 * var(--text-size-base));
+	--text-size-xs: calc(0.5 * var(--text-size-base));
+	--text-size-sm: calc(0.75 * var(--text-size-base));
+	--text-size-md: calc(1.25 * var(--text-size-base));
+	--text-size-lg: calc(1.75 * var(--text-size-base));
+	--text-size-xl: calc(2.25 * var(--text-size-base));
+	--text-size-xxl: calc(3 * var(--text-size-base));
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	overflow-y: hidden;
+	font-size: var(--text-size-lg);
+	font-family: var(--font-family);
+}
+.full-screen{
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.start-button-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 15vh;
+}
+.start-button{
+	background: none;
+	color: var(--main-color);
+	font-size: var(--text-size-lg);
+	font-family: var(--font-family);
+	padding: 10px 30px;
+	border: 1px solid var(--main-color);
+	border-radius: 30px;
+}
+.start-button:active{
+	transform: translateY(3px);
+	outline: none;
+}
+.options-container{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 85vh;
+}
+.side-container{
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+.container-name{
+	align-self: flex-start;
+	margin-left: 35px;
+	font-size: var(--text-size-lg);
+	font-family: var(--font-family);
+}
+.ships-option{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 70%;
+	margin: 10px 0px;
+	padding: 10px 25px;
+	border: solid 1px var(--main-color);
+	border-radius: 20px;
+}
+.ships-option p, input{
+	font-size: var(--text-size-md);
+	font-family: var(--font-family);
+	text-align: center;
+	color: var(--main-color);
+}
+.ships-option p{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.ship-icon{
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.icon-corvette{
+	background-image: url("images/corvette-pip.svg");
+}
+.icon-destroyer{
+	background-image: url("images/destroyer-pip.svg");
+}
+.icon-cruiser{
+	background-image: url("images/cruiser-pip.svg");
+}
+.icon-battleship{
+	background-image: url("images/battleship-pip.svg");
+}
+.icon-titan{
+	background-image: url("images/titan-pip.svg");
+}
+.ship-input{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+input{
+	width: 40px;
+	border: none;
+	border-bottom: 1px solid var(--main-color);
+}
+/* .minus, .plus{
+	width: 20px;
+	margin: 0px 5px;
+} */
+.hidden{
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+#battle-results{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.results-info h2{
+	text-align: center;
+}
+.results-info > *{
+	margin-top: 1em;
+}
+
+@media screen and (max-width: 900px){
+	:root{
+		--text-size-base: 0.7em;
+	}
+}
+@media screen and (max-width: 600px){
+	:root{
+		--text-size-base: 0.5em;
+	}
+}
