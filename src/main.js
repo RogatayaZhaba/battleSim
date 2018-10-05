@@ -81,7 +81,7 @@ async function showLoader(options){
 	optionsPage.classList.toggle("hidden");
 	loaderPage.classList.toggle("hidden");
 
-	await showAnimation(495);
+	await showAnimation(49500);
 	loader.classList.toggle("hidden");
 	info.classList.toggle("hidden");
 }
