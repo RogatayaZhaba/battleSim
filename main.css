@@ -11,6 +11,11 @@
 	--text-size-lg: calc(1.75 * var(--text-size-base));
 	--text-size-xl: calc(2.25 * var(--text-size-base));
 	--text-size-xxl: calc(3 * var(--text-size-base));
+
+	--spinner-size-base: 150px;
+	--spinner-size-sm: calc(0.5 * var(--spinner-size-base));
+	--spinner-size-md: calc(1 * var(--spinner-size-base));
+	--spinner-size-lg: calc(1.5 * var(--spinner-size-base));
 }
 *{
 	margin: 0;
@@ -28,6 +33,7 @@ body{
 	position: absolute;
 	left: 0;
 	top: 0;
+	background: white;
 }
 .start-button-container{
 	display: flex;
@@ -44,10 +50,10 @@ body{
 	padding: 10px 30px;
 	border: 1px solid var(--main-color);
 	border-radius: 30px;
+	outline: none;
 }
 .start-button:active{
 	transform: translateY(3px);
-	outline: none;
 }
 .options-container{
 	display: flex;
@@ -72,6 +78,7 @@ body{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	width: 70%;
 	margin: 10px 0px;
 	padding: 10px 25px;
@@ -120,6 +127,7 @@ input{
 	width: 40px;
 	border: none;
 	border-bottom: 1px solid var(--main-color);
+	outline: none;
 }
 /* .minus, .plus{
 	width: 20px;
@@ -136,11 +144,58 @@ input{
 	justify-content: center;
 	align-items: center;
 }
+.results-info{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .results-info h2{
 	text-align: center;
 }
 .results-info > *{
-	margin-top: 1em;
+	margin-top: var(--text-size-base);
+}
+.loader{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.spinner{
+	width: var(--spinner-size-md);
+	height: var(--spinner-size-md);
+}
+.spinner .stator{
+	fill: var(--main-color);
+	stroke: none;
+}
+.spinner .rotor{
+	fill: none;
+	stroke: var(--main-color);
+	transform-origin: center;
+	animation: spin 3s linear infinite;
+}
+.rotor.fast{
+	animation: spin 2s linear infinite;
+}
+.spinner .planet{
+	fill: var(--main-color);
+	stroke: #fff;
+}
+.loading-text{
+	margin-top: calc(2.5 * var(--text-size-base));
+	font-size: var(--text-size-lg);
+	font-family: var(--font-family);
+	color: var(--main-color);
+}
+@keyframes spin{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
 }
 
 @media screen and (max-width: 900px){
